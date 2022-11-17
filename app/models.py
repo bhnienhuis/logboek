@@ -5,7 +5,7 @@ from .database import Base
 class Pilot(Base):
     __tablename__ = "pilot"
 
-    id = Column(Integer, primary_key=True, nullable=False)
+    ID = Column(Integer, primary_key=True, nullable=False)
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
     email = Column(String, nullable=False, unique=True)
@@ -58,3 +58,111 @@ class TotalsYear(Base):
     tmg = Column(Integer, nullable=True)
     duur = Column(Integer)
     id_pilot = Column(Integer)
+
+
+class TotalsType(Base):
+    __tablename__ = "vw_totals_type"
+
+    type = Column(String, primary_key=True)
+    totaal = Column(Integer, primary_key=True)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+
+class TotalsPlane(Base):
+    __tablename__ = "vw_totals_plane"
+
+    registratie = Column(String, primary_key=True)
+    type = Column(String)
+    totaal = Column(Integer, primary_key=True)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+
+class TotalsYearType(Base):
+    __tablename__ = "vw_totals_year_type"
+
+    jaar = Column(Integer, primary_key=True)
+    type = Column(String, primary_key=True)
+    totaal = Column(Integer)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+class TotalsYearField(Base):
+    __tablename__ = "vw_totals_year_field"
+
+    jaar = Column(Integer, primary_key=True)
+    veld = Column(String, primary_key=True)
+    totaal = Column(Integer)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+class TotalsField(Base):
+    __tablename__ = "vw_totals_field"
+
+    veld = Column(String, primary_key=True)
+    totaal = Column(Integer, primary_key=True)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+
+class TotalsInstructor(Base):
+    __tablename__ = "vw_totals_instructor"
+
+    instructeur = Column(String, primary_key=True)
+    totaal = Column(Integer, primary_key=True)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+
+class TotalsMethod(Base):
+    __tablename__ = "vw_totals_method"
+
+    methode = Column(String, primary_key=True)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    self = Column(Integer, nullable=True)
+    tmg = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+
+class TotalsYearInstruction(Base):
+    __tablename__ = "vw_totals_year_instruction"
+
+    jaar = Column(Integer, primary_key=True)
+    totaal = Column(Integer, primary_key=True)
+    lier = Column(Integer, nullable=True)
+    sleep = Column(Integer, nullable=True)
+    duur = Column(Integer)
+    id_pilot = Column(Integer)
+
+class PilotFields(Base):
+    __tablename__ = "vw_pilot_fields"
+
+    id = Column(Integer, primary_key=True)
+    id_pilot = Column(Integer, primary_key=True)
+    name = Column(String, nullable=True)
+
+
+
+
+

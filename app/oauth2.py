@@ -39,5 +39,5 @@ def verify_access_token(token: str, credentials_exception):
 def get_current_pilot(token: str = Depends(oauth2_scheme), db: Session =  Depends(database.get_db)):
     credentials_exception = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not validate credentials", headers={"WWW-Athenticate": "Bearer"})
     token = verify_access_token(token, credentials_exception)
-    pilot = db.query(models.Pilot).filter(models.Pilot.id == token.id).first()
+    pilot = db.query(models.Pilot).filter(models.Pilot.ID == token.ID).first()
     return pilot

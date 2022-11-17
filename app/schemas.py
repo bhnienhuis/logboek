@@ -18,7 +18,7 @@ class Token(BaseModel):
 
 
 class TokenData(BaseModel):
-    id: Optional[str]
+    ID: Optional[str]
 
 
 ##########
@@ -68,6 +68,119 @@ class TotalsYear(BaseModel):
     tmg: Optional[int]
     duur: int
     id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+class TotalsType(BaseModel):
+    type: str
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsPlane(BaseModel):
+    registratie: str
+    type: str
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsField(BaseModel):
+    veld: str
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsInstructor(BaseModel):
+    instructeur: str
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsMethod(BaseModel):
+    methode: str
+    lier: Optional[int]
+    sleep: Optional[int]
+    self: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsYearType(BaseModel):
+    jaar: int
+    type: str
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsYearField(BaseModel):
+    jaar: int
+    veld: str
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    tmg: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+
+class TotalsYearInstruction(BaseModel):
+    jaar: int
+    totaal: int
+    lier: Optional[int]
+    sleep: Optional[int]
+    duur: int
+    id_pilot: int
+
+    class Config:
+        orm_mode = True
+
+class PilotFields(BaseModel):
+    id: int
+    id_pilot: int
+    name: str
 
     class Config:
         orm_mode = True
